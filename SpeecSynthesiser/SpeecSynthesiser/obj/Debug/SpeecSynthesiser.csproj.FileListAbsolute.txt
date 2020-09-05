@@ -1,7 +1,6 @@
 D:\Documents\Fiverr\Okami12313\SpeecSynthesiser\SpeecSynthesiser\bin\Debug\SpeecSynthesiser.exe.config
 D:\Documents\Fiverr\Okami12313\SpeecSynthesiser\SpeecSynthesiser\bin\Debug\SpeecSynthesiser.exe
 D:\Documents\Fiverr\Okami12313\SpeecSynthesiser\SpeecSynthesiser\bin\Debug\SpeecSynthesiser.pdb
-D:\Documents\Fiverr\Okami12313\SpeecSynthesiser\SpeecSynthesiser\obj\Debug\SpeecSynthesiser.csprojAssemblyReference.cache
 D:\Documents\Fiverr\Okami12313\SpeecSynthesiser\SpeecSynthesiser\obj\Debug\Interop.SpeechLib.dll
 D:\Documents\Fiverr\Okami12313\SpeecSynthesiser\SpeecSynthesiser\obj\Debug\SpeecSynthesiser.csproj.ResolveComReference.cache
 D:\Documents\Fiverr\Okami12313\SpeecSynthesiser\SpeecSynthesiser\obj\Debug\SpeecSynthesiser.Form1.resources

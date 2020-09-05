@@ -42,6 +42,7 @@ namespace SpeecSynthesiser
 
         static void recognizer_StartListening(object sender, SpeechDetectedEventArgs e)
         {
+
         }
 
         private void startListening_SpeechRecognised(object sender, SpeechRecognizedEventArgs e)

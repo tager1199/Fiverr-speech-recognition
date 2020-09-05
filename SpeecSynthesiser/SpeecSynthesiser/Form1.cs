@@ -8,22 +8,19 @@ namespace SpeecSynthesiser
 
     public partial class Form1 : Form
     {
-        SpeechRecognitionEngine recognizer = new SpeechRecognitionEngine(new System.Globalization.CultureInfo("en-GB"));
+        DateTime speekTime = DateTime.UtcNow;
+        SpeechRecognitionEngine recognizer = new SpeechRecognitionEngine(new System.Globalization.CultureInfo("en-US"));
         SpeechRecognitionEngine startListening = new SpeechRecognitionEngine();
+        
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        public static void ChangeText(String message)
-        {
-            Form1 frm1 = new Form1();
-            frm1.SpeechBox.Text += message;
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
+
             recognizer.SetInputToDefaultAudioDevice();
             recognizer.LoadGrammarAsync(new DictationGrammar());
             recognizer.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);
@@ -37,7 +34,13 @@ namespace SpeecSynthesiser
 
         public void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
-            SpeechBox.Text += e.Result.Text + "\n";
+            Console.WriteLine(speekTime.Subtract(DateTime.UtcNow).TotalSeconds);
+            if (DateTime.UtcNow.Subtract(speekTime).TotalSeconds > 10)
+                SpeechBox.Text = e.Result.Text;
+            else
+                SpeechBox.Text += "\n" + e.Result.Text;
+            speekTime = DateTime.UtcNow;
+            Clipboard.SetText(SpeechBox.Text);
         }
 
         static void recognizer_StartListening(object sender, SpeechDetectedEventArgs e)
@@ -50,9 +53,5 @@ namespace SpeecSynthesiser
             throw new NotImplementedException();
         }
 
-        private void Copy_Btn_Click(object sender, EventArgs e)
-        {
-            Clipboard.SetText(SpeechBox.Text);
-        }
     }
 }
